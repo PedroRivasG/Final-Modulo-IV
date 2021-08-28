@@ -1,0 +1,35 @@
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
+<!-- Background & animion & navbar & title -->
+<div class="container-fluid">
+    <!-- Background animtion-->
+    <div class="background">
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+    </div>
+    <!-- header -->
+    <header>
+        <!-- navbar -->
+        <nav>
+            <ul>
+                <li>
+                    <a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+                </li>
+                <li><a [routerLink]="['/registro']" routerLinkActive="router-link-active">Registro de Empleado</a></li>
+                <li><a [routerLink]="['/lista']">Listado de Empleados</a></li>
+
+            </ul>
+        </nav>
+        <!-- logo -->
+        <div class="logo"><span></span></div>
+        <!-- title & content -->
+        <section class="header-content">
+            <h1>Welcome</h1>
+            <p> Proyecto Final de Módulo IV<br> </p>
+            <button [routerLink]="['/registro']" routerLinkActive="router-link-active">Registro</button>
+            <button [routerLink]="['/lista']" routerLinkActive="router-link-active">Listado</button>
+        </section>
+    </header>

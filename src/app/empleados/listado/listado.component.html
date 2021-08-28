@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Empleados</title>
+    <a class="btn btn-info text-dark" style="margin: 10px" [routerLink]="['/home']" routerLinkActive="router-link-active">Regresar</a>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a class="text-dark" [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+            </li>
+            <li><a class="text-dark" [routerLink]="['/registro']" routerLinkActive="router-link-active">Registro de Empleado</a></li>
+
+
+        </ul>
+    </nav>
+    <div class="container">
+        <br width=50%>
+        <div class="row">
+            <h1>Listado de Empledos</h1>
+
+            <div class="col">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Género</th>
+                            <th>Edad</th>
+                            <th>Teléfono</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let e of employees">
+                            <td>{{e.Nombre}}</td>
+                            <td>{{e.Apellidos}}</td>
+                            <td>{{e.Genero}}</td>
+                            <td>{{e.Edad}}</td>
+                            <td>{{e.Telefono}}</td>
+                            <a class="btn btn-info text-dark" style="margin: 10px" (click)="editar(e._id)" [routerLink]="['/editar/', e._id]" routerLinkActive="router-link-active">Editar</a>
+                            <a class="btn btn-danger" style="margin: 10px" (click)="eliminar(e._id)" routerLinkActive="router-link-active">Eliminar</a>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </div>
+</body>
+
+</html>

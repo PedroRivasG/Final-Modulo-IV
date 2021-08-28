@@ -1,0 +1,23 @@
+<form class="form">
+    <h2>Registro de Empleados</h2>
+    <p type="Nombre">
+        <input class="form-control" [(ngModel)]="employee.Nombre" type="text" name="Nombre" placeholder="Nombre">
+    </p>
+    <p type="Apellidos">
+        <input class="form-control" [(ngModel)]="employee.Apellidos" type="text" name="Apellidos" placeholder="Apellidos">
+    </p>
+    <p type="Genero">
+        <select class="form-control" [(ngModel)]="employee.Genero" name="Genero">
+<option>Masculino</option>
+<option>Femenino</option>
+</select>
+    </p>
+    <p type="Edad">
+        <input class="form-control" [(ngModel)]="employee.Edad" type="text" name="Edad" placeholder="Edad">
+    </p>
+    <p type="Telefono">
+        <input class="form-control" [(ngModel)]="employee.Telefono" type="text" name="Telefono" placeholder="Teléfono">
+    </p>
+    <button type="button" (click)="create()" [routerLink]='["/lista"]' routerLinkActive="router-link-active">Registrar</button>
+    <button type="button" style="margin: 10px" [routerLink]='["/lista"]' routerLinkActive="router-link-active">Cancelar</button>
+</form>
